@@ -6,3 +6,8 @@ body {
 h4 {
     font-family: 'Roboto';
 }
+
+.color section {
+    color:#fff0e6;
+    background-color: #c45444;;
+}
