@@ -1,5 +1,7 @@
 body {
-    ra
+    
+    background:linear-gradient( rgba(34,193,195,1), rgba(45,253,106,1));
+   background-attachment: fixed;
 }
 h1 {
     font-size: 50px;
@@ -12,4 +14,24 @@ header::first-line {
 }
 h2{
     transform: rotate(10deg);
+    margin-top: 50px;
+}
+button {
+    background-color: #aec17b;
+    border-radius: 17px;
+    border-color: blue;
+    border-width: 9px;
+    border-style: ridge;
+    padding:15px;
+    font-family: 'Chela One';
+}
+.buttontwo {
+    background-image: linear-gradient(#544939, #d73530);
+    border-radius: 12px;
+    border-color: blue;
+    border-width: 15px;
+    border-style: dashed;
+    text-shadow: 2px 2px #989992;
+    color: #edeaea;
+    background-clip: padding-box;
 }
