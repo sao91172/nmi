@@ -1,12 +1,33 @@
 body {
-    background-color: #fff0e6;
-    /*color:#F8F8F8*/
+    background-color:#270722;
+    color: #FFCFD2;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Helvetica, sans-serif;
+   
 
 }
 h4 {
     font-family: 'Roboto';
 }
+a:visited {
+    color: #FFCFD2;
+    text-decoration: none;
 
+}
+li {
+    text-decoration: none;
+
+}
+a:hover {
+    
+    color: #270722;
+    background-color: #CFBAE1;
+}
+
+h3{
+   color: #C42847;
+}
 .color section {
     color:#fff0e6;
     background-color: #c45444;;
