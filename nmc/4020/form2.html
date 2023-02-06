@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+        font-size: 24px;
+        background-color: #f16076;
+        color: #F7E1D7;
+       
+    }
+    body {
+        background-color: #4A5759;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    form {
+        margin: 0 auto;
+  width: 400px;
+   padding: 1em;
+  border: 1px solid #F7E1D7;
+  border-radius: 1em;
+  margin-top: 100px;
+    }
+    input, textarea {
+        background-color:#DEDBD2;
+        border-radius: 7px;
+        border-width: 7px;
+        border-style: ridge;
+        border-color:#B0C4B1;
+        font: 1em, sans-serif;
+    }
+    .submit {
+        background-color: #042117;
+        color: white;
+        border-radius: 8px;
+        border-style: none;
+    }
+    ul {
+        list-style: none;
+    }
+    fieldset {
+        
+        padding-block-end: 2em;
+        border-radius: 7px;
+        
+    }
+    
+    </style>
+</head>
+<body>
+    <header> Form Practice</header>
+    <main>
+    <form action="showme.html" method="get" id="base" name="base">
+        <ul>
+            <li>
+                <label for="fruit bowl">
+                    <span>Pick a base:</span>
+                </label>
+              <select id="food" name="food">
+                <option>Greek Yogurt</option>
+                <option>Pitaya</option>
+                <option selected>Acai</option>
+                <option>Oatmeal</option>
+            </select>
+            </li>
+
+            <li>
+            <label for="myStars">Pick a fruit</label>
+                <input type="text" name="fruits" id="fruits" list="fruitoptions" />
+                <datalist id="fruitoptions">
+                    <option>Strawberries</option>
+                    <option>Blueberries</option>
+                    <option>Kiwi</option>
+                    <option>Pineapple</option>
+                    <option>Bananna</option>
+                    <option>Raspberries</option>
+                </datalist>
+            </li>
+        
+              <fieldset style="margin-top: 10px">
+                <legend>Add some toppings</legend>
+                <ul>
+                  <li>
+                    <input type="radio" name="toppings" id="almonds" value="almonds" />
+                    <label for="size_1">Almonds</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="toppings" id="chocochips" value="chocochips" />
+                    <label for="size_2">Chocolate Chips</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="toppings" id="granola" value="granola" />
+                    <label for="size_3"> Granola</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="toppings" id="honey" value="honey" />
+                    <label for="size_4"> Honey</label>
+                  </li>
+                </ul>
+              </fieldset>
+
+            <li style="margin-top: 10px">
+              <label for="quantitybowls">Quantity of bowls?</label>
+              <input type="number" name="quantity" id="quantity" min="1" max="5" step="1" />
+            </li>
+            
+            <li class="button">
+                <button class = "submit" type="submit">Submit</button>
+            </li>
+        </ul>
+        
+    </form>
+    </main>
+</body>
+</html>
+

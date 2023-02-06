@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+        font-size: 24px;
+        background-color: #f16076;
+        color: #F7E1D7;
+       
+    }
+    body {
+        background-color: #4A5759;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    form {
+        margin: 0 auto;
+  width: 400px;
+   padding: 1em;
+  border: 1px solid #F7E1D7;
+  border-radius: 1em;
+  margin-top: 100px;
+    }
+    /* input {
+        background-color:#DEDBD2;
+        border-radius: 7px;
+        border-width: 7px;
+        border-style: ridge;
+        border-color:#B0C4B1;
+        font: 1em, sans-serif;
+    } */
+    .submit {
+        background-color: #042117;
+        color: white;
+        border-radius: 8px;
+        border-style: none;
+    }
+    ul {
+        list-style: none;
+    }
+    fieldset {
+        
+        padding-block-end: 2em;
+        border-radius: 7px;
+        
+    }
+    li {
+        list-style: none;
+    }
+    
+    </style>
+</head>
+<body>
+    <header> Form Practice</header>
+    <main>
+    <form action="https://nmidev.xyz/db5/receiver.php" method="get" id="base" name="base">
+        <li>
+        <label for="yourname">Name:</label>
+        <input type="text" name="yourname" id="yourname"/>
+        </li>
+        <li>
+           <label for="yourage">Age:</label>
+            <input type="text" name="yourage" id="yourage"/> 
+        </li>
+        <li>
+           <label for="hometown">Hometown:</label>
+            <input type="text" name="hometown" id="hometown"/> 
+        </li>
+        <li class="button">
+            <button class = "submit" type="submit">Submit</button>
+        </li>
+            
+            
+    </form>
+    </main>
+</body>
+</html>
