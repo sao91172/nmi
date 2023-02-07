@@ -12,6 +12,10 @@ body {
 h2 {
 font-family: milkshake;
 }
+#heyo {
+    font-family: milkshake;
+
+}
 a:link {
     text-decoration: none;
 }
