@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&family=Pacifico&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        background-color: #b5897a;
+    }
+    #result {
+        color: #2d0d02;
+        font-family: omnes-bold;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    @font-face {
+    font-family: "omnes-bold";
+    src: url("Omnes Bold.otf");
+}
+    h1 {
+        color: #efe7df;
+        text-shadow: 7px 7px 5px #e70121;
+        font-family:'Pacifico', cursive;
+    }
+    button {
+        background-color: #2d0d02;
+        color: #FE623D;
+        font-size: 19px;
+        font-family: omnes-bold;
+        border-radius: 5px;
+        padding: 7px;
+    }
+    
+</style>
+<body>
+    <h1>✨Fortune Teller✨</h1>
+    <img src = "naruto.png" alt = "fortune design" width="250px">
+    <br>
+    <br>
+    <br>
+    <input type = "text" id = "namehere" placeholder = "your name here"> <br>
+    <br>
+    <div id = "result"></div>
+    <button onclick = "fortune()">Your fortune</button>
+</body>
+</html>
+
+<script>
+    let outcome = ["seek another fortune cookie", "get tired of clicking the button","ask for an actual fortune in which I will be unable to provide"];
+    function fortune() {
+        let name = document.querySelector('#namehere').value;
+        let item = Math.floor((Math.random() * outcome.length));
+        let result = document.querySelector('#result');
+        result.innerHTML = name + " your fortune is that you will " + outcome[item];
+    }
+    
+</script>

@@ -1,0 +1,45 @@
+body {
+   
+   background-color: #F7FFF7;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+html {
+   display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+div {
+   margin-top: 150px;
+}
+
+
+#alsoRan {
+   display: flex;
+    flex-flow: row wrap;
+    row-gap: 40px;
+    column-gap: 50px;
+    justify-content: center;
+    border: #145C9E dashed 10px;
+    padding: 20px;
+    color: #1F271B;
+}
+
+
+
+h1 {
+   text-align: center;
+   font-size: 42px;
+   color:#0B4F6C;
+}
+
+button {
+   margin-top: 20px;
+   font-size: 20px;
+   background-color: #0B4F6C;
+   color: #4ECDC4;
+   border-radius: 7px;
+
+   
+}
