@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #square {
+        background-color: #000;
+        width: 400px;
+        height: 400px;
+        position: absolute; 
+        left: 50px; 
+        top: 50px;
+        margin-top: 200px;
+        margin-left: 120px;
+    }
+    body {
+        background-color: #FFF9EC;
+        color: #FB6376;
+       
+    }
+    h1 {
+         text-align: center;
+    }
+    button {
+        color: #FCB1A6;
+        background-color: #5D2A42;
+        border-radius: 4px;
+    }
+    .button {
+        margin-top: 150px;
+        margin-left: 120px;
+
+    }
+</style>
+<body>
+    <h1> Control CSS with JS</h1>
+    <div id = 'square'></div>
+    <div class = "button">
+     <button onclick = "changeCSS('yellow', '25%')">Yellow</button>
+     <button onclick = "changeCSS('red', '90%')">Red</button>
+     <button onclick = "changeCSS('blue', '35%')">Blue</button>
+    </div>
+    
+    
+     
+</body>
+</html>
+<script src = "controlcsswithjs.js"></script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+ <link rel="stylesheet" href="ship.css">
+</head>
+
+<body>
+    <button onclick="reverse()">Reverse</button>
+    <button onclick="rotate()">Rotate</button>
+    <div id="ship">
+        <div id="shipLight"></div>
+    </div>
+</body>
+</html>
+<script>
+    let ship = document.querySelector('#ship');
+    let shipLight = document.querySelector('#shipLight');
+    let howfar = 0;
+    let light = 0;
+   
+    let isReversed = false;
+    let rotated = false;
+   
+    function reverse() {
+        if (isReversed == true) {
+            isReversed = false;
+        } else {
+            isReversed = true;
+        }
+    }
+    setInterval(function() {
+        if(isReversed == false) {
+            if (howfar>1300) {howfar=-300;}
+            if (light == 25) {shipLight.style='background-color: black';}
+            if (light == 50) {light = 0; shipLight.style='background-color: red';}
+            howfar +=5;
+            light ++;
+            ship.style.left = howfar+"px";
+        } else {
+            if (howfar<-300) {howfar=1300;}
+            if (light == 25) {shipLight.style='background-color: black';}
+            if (light == 50) {light = 0; shipLight.style='background-color: red';}
+            howfar -=5;
+            light ++;
+            ship.style.left = howfar+"px";
+        }
+     
+}, 10);
+function rotate() {
+        if(rotated == false) {
+            rotated = true;
+            ship.style.transform = "rotate(190deg)";
+        } else {
+            rotated = false;
+            ship.style.transform = "rotate(0deg)";
+        }
+    }
+   
+   
+</script>
