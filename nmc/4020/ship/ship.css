@@ -5,6 +5,7 @@
             position: absolute;
             left: 1px;
             top: 40px;
+            margin-top: 250px;
         }
 
         #shipLight {
@@ -15,4 +16,22 @@
             position: absolute;
             left: 211px;
             top: 52px;
+        }
+        button {
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            border-color:white;
+            border-radius: 4px;
+            margin-top: 50px;
+        }
+        
+        img {
+            position: absolute;
+        }
+        body {
+            background-image: url("space.jpeg");
+            background-repeat:no-repeat;
+            background-size: cover;
+            
         }
