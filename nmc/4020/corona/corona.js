@@ -249,3 +249,61 @@ let articles = [
 }
 ]
 
+
+
+
+let article = document.getElementById("article");
+
+let articleDiv;
+let textDiv;
+let imgDiv;
+for (let i = 0; i < article.length; i++) {
+    //creates new divs for each article
+    articleDiv = document.createElement("div");
+    textDiv = document.createElement("div");
+    imgDiv = document.createElement("div");
+    //css styling for each div
+    articleDiv.style.padding = "10px";
+    style(textDiv);
+    style(imgDiv);
+    //fills divs with article data
+    fillTitle(i);
+    fillImg(i);
+    //appends divs to article
+    articleDiv.appendChild(textDiv);
+    articleDiv.appendChild(imgDiv);
+    article.appendChild(articleDiv);
+} //for
+
+function fillTitle(i) {
+    //create header and link
+    let title = document.createElement("h3");
+    let a = document.createElement("a");
+    a.href = articles[i].url;
+    a.appendChild(document.createTextNode(articles[i].title));
+    //add link to inside of header
+    title.appendChild(a);
+    //create description
+    let des = document.createElement("p");
+    des.appendChild(document.createTextNode(articles[i].description));
+
+    //add title, description, and image to textDiv
+    textDiv.appendChild(title);
+    textDiv.appendChild(des);
+} //fillTitle
+
+function fillImg(i) {
+    //creates image and assigns to imgDiv
+    let img = document.createElement("img");
+    img.src = articles[i].urlToImage;
+    img.style.height = "300px";
+    imgDiv.appendChild(img);
+} //fillDes
+
+function style(div) {
+    //sets css styling for each div
+    div.style.float = "left";
+    div.style.width = "50%";
+} //style
+
+
