@@ -6,16 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    div {
+        background-color: #000;  
+        border-radius: 50%;
+        float: left;
+        margin: 10px;
+    }
+    #min {
+        background-color: #dad4d4; 
+        opacity: 0.5;
+    }
+    #hazard {
+        background-color: red; 
+    }
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <body>
-    <div id="count"> </div>
-    <p id = "count"></p>
-    <div id="astlist"> </div>
+    
     
 </body>
 </html>
 <script>
+    let asteroidDisplay = document.querySelector('body');
     $( document ).ready(function() { 
-        $.getJSON('https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=6GkozFBru8KqBfF32aHkxtVoL1QpwAsDWU5T5ltz', function(data) { })
+        $.getJSON('https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=hjTsYQ89jnNtbcAEna01deHFJq4RlP3MTX1fjVBh', function(data) {
+            var howMany = data.near_earth_objects.length;
+            let dataSource = data.near_earth_objects;
+            for(var i = 0; i < dataSource.length; i++) {
+                let maxWidth = (dataSource[i].estimated_diameter.kilometers.estimated_diameter_max) * 10;
+                let halfWidth = maxWidth/2; //pushes the min width to the right
+                let fourthWidth = maxWidth /4; //pushes the minwidth down
+                let hazard = dataSource[i].is_potentially_hazardous_asteroid;
+                let minWidth = (dataSource[i].estimated_diameter.kilometers.estimated_diameter_min) * 10;
+                if(hazard) {
+                    asteroidDisplay.innerHTML+= "<div id='hazard' style='width:"+maxWidth+"px;height:"+maxWidth+"px;'> <div id = 'min' style='width:"+minWidth+"px;height:"+minWidth+"px; margin-top:"+halfWidth+"px;margin-left:"+fourthWidth+"px'></div></div>";
+                }
+                asteroidDisplay.innerHTML+= "<div style='width:"+maxWidth+"px;height:"+maxWidth+"px;'><div id = 'min' style='width:"+minWidth+"px;height:"+minWidth+"px; margin-top:"+halfWidth+"px;margin-left:"+fourthWidth+"px'></div></div>";
+
+            }
+         });
      });  
 </script>

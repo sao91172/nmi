@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <button onClick = "qa()"> Load New Question</button>
+    <div id = "maindiv"></div>
+</body>
+</html>
+
+<script>
+    var divLoad = document.querySelector('#maindiv'); 
+    var theAnswer = [];
+ function qa(){
+    divLoad.innerHTML = "";
+        $.getJSON('https://jservice.io/api/random?count=10', function(data) {
+            for (var i = 0; i < 10; i++) {
+                
+                divLoad.innerHTML += "<h3> Category: " + data[i].category.title + "</h3>";
+                divLoad.innerHTML += "<h3>" + data[i].question + "</h3>";
+                divLoad.innerHTML +=  "<div id = 'answer" + i + "'></div>";
+                divLoad.innerHTML += "<button onClick = 'showAnswer(" + i + ")'> Show Answer </button><br>";
+                theAnswer.push(data[i].answer);
+            } 
+            
+            
+            
+            
+
+});
+    }
+
+    function showAnswer(b) {
+     
+        let whatever = document.querySelector("#answer" + b);
+        whatever.innerHTML = "<b> The answer is " + theAnswer[b] + "</b";
+    }
+
+</script>
