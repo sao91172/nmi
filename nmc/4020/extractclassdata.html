@@ -8,23 +8,51 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <style>
-    body {
-        display: flex;
     
+    div{
+        display: flex;
+         flex-wrap: wrap;
+        justify-content: space-around;
+        margin: auto;
+      
     }
+
+    img {
+        width: 350px;
+        border-radius: 20px;
+        padding: 10px;
+        
+      }
+      body {
+        background-color: #f7eecc;
+        color: #370635;
+      }
+      a {
+        color: #d1404a;
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
 </style>
 <body>
+    <div id = "student"></div>
     
 </body>
 </html>
 <script>
-    let classDisplay = document.querySelector('body');
+    let student = document.querySelector('#student');
     $( document ).ready(function() { 
 
     $.getJSON('https://raw.githubusercontent.com/emuel/api/master/5110', function(data) {  
         for(var i = 0; i < data.length; i++) {
+            student.innerHTML += "<div style='width: 350px; padding:10px'><h3><a href = 'https://" + data[i].domain + "'>" + data[i].stu_name  + " " + data[i]. last_name + "</a></h3><img src='https://" + data[i].domain + "/images/me.jpg'>" + data[i].fact +" </div>";
 
         }//for
       });
 });  
+
+
+
+
+
 </script>
