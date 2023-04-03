@@ -1,37 +1,50 @@
 app.component('product-display', {
+  props: {
+    premium: {
+      type: Boolean,
+      required: true
+    },
+
+  },
     template:
     /*html*/
-    <div class="product-display">
+    ` <div class="product-display">
     <div class="product-container">
       <div class="product-image">
-        <img:class="{ 'out-of-stock-img': !inStock }" v-bind:src="image">
+        <img v-bind:src="image">
       </div>
       <div class="product-info">
-        <h1>{{title}}</h1>
+        <h1>{{ title }}</h1>
         <p v-if="inStock">In Stock</p>
         <p v-else>Out of Stock</p>
-        <p>{{ description }}</p>
-        <p> {{price}}</p>
-        <p> {{OnSale}}</p>
-        <a v-bind:href = "url"> Happy Socks!</a>
-        <ul>
-            <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
-          </ul>
-        <ul>
-            <li v-for = "detail in details">{{detail}}</li>
-        </ul>
-        <ul>
-            <div v-for="(variant,index) in variants" :key="variant.id" @mouseover="updateVariant(index)" class = "color-circle":style = "{backgroundColor:variant.color}"></div>
-        </ul>
-        <button class = "button" :class = "{disabledButton: !inStock}" :disabled = "!inStock" @click = "addToCart">Add to Cart</button>
-        <button style ="font-size: 14px;"class = "button" @click = "removeFromCart">Remove from Cart</button>
+        <p>Shipping: {{ shipping }}</p>
+        
+        <!-- solution -->
+        <product-details :details="details"></product-details>
+        <!-- solution -->
+        <div 
+          v-for="(variant, index) in variants" 
+          :key="variant.id" 
+          @mouseover="updateVariant(index)" 
+          class="color-circle" 
+          :style="{ backgroundColor: variant.color }">
+        </div>
+        
+        <button 
+          class="button" 
+          :class="{ disabledButton: !inStock }" 
+          :disabled="!inStock" 
+          v-on:click="addToCart">
+          Add to Cart
+        </button>
       </div>
     </div>
-  </div>
-</div>
+  </div>`
+  
+
 ,
 
-    data: function () {
+    data () {
         return {
             cart:0,
             product:'Socks',
@@ -82,8 +95,15 @@ app.component('product-display', {
             if (this.onSale) {
                 return this.brand + ' ' + this.product + ' is on sale.'
             }
-            return ''
-        }
+           
+        },
+        shipping() {
+          if (this.premium) {
+            return 'Free'
+          }
+            return 2.99
+          }
+
     }
     
 })
