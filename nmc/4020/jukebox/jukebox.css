@@ -1,0 +1,325 @@
+/* Spinng vinyl code */
+* {
+    outline: none !important;
+  }
+  
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FF597B;
+  }
+  
+  a {
+    color: #1178ce;
+    transition: all 0.2s ease;
+  }
+  a:hover {
+    color: #2da7f9;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  a:active, a:focus {
+    text-decoration: none;
+  }
+  
+  .btn {
+    border-radius: 0;
+  }
+  .btn:hover {
+    text-decoration: none !important;
+  }
+  
+  .btn-sm {
+    border-radius: 0;
+  }
+  .btn-sm:hover {
+    text-decoration: none !important;
+  }
+  
+  .btn--blue-light {
+    background: #2da7f9 !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+  .btn--blue-light:hover {
+    background: #5fbcfa !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+  .btn--blue-light:active, .btn--blue-light:focus {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .btn--blue {
+    background: #1178ce !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+  .btn--blue:hover {
+    background: #2da7f9 !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+  .btn--blue:active, .btn--blue:focus {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .btn--blue-dark {
+    background: #004183 !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+  .btn--blue-dark:hover {
+    background: #1178ce !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+  .btn--blue-dark:active, .btn--blue-dark:focus {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .link--light {
+    color: #ffffff;
+  }
+  .link--light:hover {
+    color: #e6e6e6;
+    text-decoration: none;
+  }
+  
+  .link--dark {
+    color: #1178ce;
+  }
+  .link--dark:hover {
+    color: #2da7f9;
+    text-decoration: none;
+  }
+  
+  .mobile-only {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    .mobile-only {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .desktop-only {
+      display: none;
+    }
+  }
+  
+  .wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bend 3s linear 4s alternate;
+    -webkit-animation-fill-mode: forwards;
+  }
+  
+  .vinyl {
+    background: #000000;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    animation: moveLeft 3s linear 4s alternate, spin 3s linear 4s infinite;
+  }
+  .vinyl div {
+    border: 1px solid #222;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  .vinyl__label {
+    border: none;
+    background: #d81e69;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .vinyl__label--header {
+    display: block;
+    font-size: 20px;
+  }
+  .vinyl__label i {
+    font-size: 22px;
+    text-align: center;
+  }
+  
+  .message {
+    font-family: "Circular Book";
+    font-size: 36px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotateZ(0deg) rotateY(0deg);
+    }
+    25% {
+      transform: rotateZ(90deg) rotateY(20deg);
+    }
+    75% {
+      transform: rotateZ(270deg) rotateY(-20deg);
+    }
+    100% {
+      transform: rotateZ(360deg) rotateY(0deg);
+    }
+  }
+  @keyframes bend {
+    from {
+      transform: rotateX(0deg);
+    }
+    to {
+      transform: rotateX(75deg);
+    }
+  }
+  @keyframes moveLeft {
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+    /** Chrome & Safari **/
+    -moz-transition: all 2s ease-in-out;
+    /** Firefox **/
+    -o-transition: all 2s ease-in-out;
+    /** Opera **/
+    from {
+      transform: translate(350px, 0);
+    }
+    to {
+      transform: translate(350px, 0);
+    }
+  }
+/* when the vinyl is clicked it reveals the search bar and the record spins */
+
+
+/*layering*/
+.layer1 {
+  z-index: 1;
+}
+.layer2 {
+  z-index: 2;
+}
+.layer3 {
+  z-index: 3;
+}
+
+/* play button*/
+#playcontainer {
+  overflow: hidden;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#buttonHolder {
+  padding-top: 300px;
+}
+#playButton {
+  /*positioning*/
+  top: 30px;
+  background: transparent;
+  border: none;
+  transform: scale(1);
+}
+#playButton:hover {
+  transform: scale(1.3,1.3);
+  transform-origin: center center;
+}
+#playButton:disabled {
+  padding-left: calc(50% - 80px);
+  transform: scale(1);
+}
+#searchBar {
+  display: flex;
+  justify-content: center;
+}
+#scrollBox {
+  height: 280px;
+  overflow: scroll;
+}
+#results{
+  padding-top: 7px;
+  text-align: center;
+
+}
+#search,#submit, .song, #back {
+ font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: #FF8E9E;
+  border-radius: 15px;
+  border-style: none;
+  padding: 7px;
+  font-size: 35px;
+}
+#submit {
+  margin: 5px;
+}
+#search {
+  background-color: #f2bdbd;
+}
+.song {
+  margin-bottom: 30px;
+  padding: 10px;
+  font-size: larger;
+  border-radius: 10px;
+  background-color: #7c0e3f;
+  border-color: #31031a;
+  border-style: solid;
+  font-size: 20px;
+}
+#songinfo {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+#albumArt, #songTitle {
+  padding: 5px;
+}
+#albumArt {
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #bb0f51 ;
+}
+#audioPlayer {
+  display: flex;
+  justify-content: center;
+}
+#player::-webkit-media-controls-panel {
+  background-color: #FF8E9E;
+}
+#back {
+  margin-top: 15px;
+  float: none;
+}

@@ -1,17 +1,22 @@
-const app = Vue.createApp({
-
-})
-
 var header = new Vue({
-    el: 'header',
+    el: '#header',
     data: {
         yourName: 'Sarah',
-        description: "Something about yourself",
+        description: "Aspiring UI Developer",
         link1:"Intoduction",
         link2: "My Portfolio",
-        link3: "About Me, OK???",
+        link3: "About Me",
         link4: "Contact",
-        link5: "My List",
+        link5: "Links",
         avatar: "images/me.png"
+    }
+})
+
+var portfolio = new Vue ({
+    el: '#portfolio',
+    data: {
+        portfolioTitle: "Say something about your portfolio",
+        image1:
+        imgText1: "ImageOne"
     }
 })
