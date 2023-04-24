@@ -90,43 +90,43 @@
 							<div class="row">
 								<div class="col-4 col-12-mobile">
 									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+										<a href="#" class="image fit"><img :src="image1" alt="" /></a>
 										<header>
-											<h3>Ipsum Feugiat</h3>
+											<h3>{{imgText1}}</h3>
 										</header>
 									</article>
 									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+										<a href="#" class="image fit"><img :src="image2" alt="" /></a>
 										<header>
-											<h3>Rhoncus Semper</h3>
-										</header>
-									</article>
-								</div>
-								<div class="col-4 col-12-mobile">
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-										<header>
-											<h3>Magna Nullam</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-										<header>
-											<h3>Natoque Vitae</h3>
+											<h3>{{imgText2}}</h3>
 										</header>
 									</article>
 								</div>
 								<div class="col-4 col-12-mobile">
 									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+										<a href="#" class="image fit"><img :src="image3" alt="" /></a>
 										<header>
-											<h3>Dolor Penatibus</h3>
+											<h3>{{imgText3}}</h3>
 										</header>
 									</article>
 									<article class="item">
-										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+										<a href="#" class="image fit"><img :src="image4" alt="" /></a>
 										<header>
-											<h3>Orci Convallis</h3>
+											<h3>{{imgText4}}</h3>
+										</header>
+									</article>
+								</div>
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="#" class="image fit"><img :src="image5" alt="" /></a>
+										<header>
+											<h3>{{imgText5}}</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a href="#" class="image fit"><img :src="image6" alt="" /></a>
+										<header>
+											<h3>{{imgText6}}</h3>
 										</header>
 									</article>
 								</div>
@@ -153,6 +153,39 @@
 							ornare iaculis.</p>
 
 						</div>
+					</section>
+
+						<!--List-->
+						<section id="list">
+							<div class="container">
+								<li><a href="#list"><span class="icon fa-list">{{link5}}</span></a></li>
+								<h3>{{header}}</h3>
+								<ol>
+									<li v-for="favorite in favorites">{{ favorite }}</li>
+								</ol>
+							</div>
+						</section>
+
+						<!--Conditional-->
+					<section id="conditional">
+						What is the name of your teacher? 
+						<!--<input v-model="teacherName">-->
+						<p v-on:click="teacherName ='John'">Darnell</p>
+						<p v-on:click="teacherName ='Emuel'">Emuel</p>
+						<p v-on:click="teacherName ='Megan'">David</p>
+						<p v-on:click="teacherName ='Chris'">Koompa</p>
+						<p v-if="teacherName == 'Emuel'">Correct! The teacher's name is {{teacherName}}</p>
+						<p v-if="teacherName != 'Emuel' && teacherName != ''">Not yet! Keep Trying</p>
+						When is Beyonce's birthday?  <input v-model="birthDate">
+						<p v-if="birthDate == 'September 4'">Correct! You are a certified bee!</p>
+						<p v-if="birthDate  != 'September 4'&& birthDate != ''">How dare you get that wrong (lol). The Beyhive is disappointed.</p>
+					</section>
+
+				<!--Function-->
+					<section id="function">
+						<div id="colors" style="width:300px;height:300px;float:left;" :style="{backgroundColor: bgColor, width: w}" > </div>
+						<p v-for="color in colors" @mouseover=changeColor(color)> {{color}} </p>
+						<p v-for="width in widths" @mouseover=changeWidth(width)> {{width}} </p>
 					</section>
 
 				<!-- Contact -->
