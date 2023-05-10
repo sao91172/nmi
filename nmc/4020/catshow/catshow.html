@@ -1,24 +1,84 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cat Component</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0px;
+                background-color: #0B3954;
+            }
+            img {width: 300px;}
+            button{
+                width: 80px; 
+                background-color: #BFD7EA;
+                color:white;
+                padding: 8px;
+                border-radius: 12px;
+                border: solid #FF5A5F 4px; 
+                margin: 6px;
+            } 
+            #cats {
+                display: flex;
+                flex-direction: column;
+            }
+            #purKitten {
+                background-color: #087E8B;
+                margin: 10px;
+                text-align: center;
+                padding: 15px;
+                border-radius: 20px;
+            }
+            #name {
+                background-color: #BFD7EA;
+            }
+            .explanation{
+              text-align: center;
+              color:white;
+            
+            }
+        </style>
+    </head>
+    <body>
+        <div id="cats">
+            <div id="purKitten">
+                <cat whichcat ="sava"></cat>
+            </div>
+            <div id="purKitten">
+                <cat whichcat ="ycho"></cat>
+            </div>
+            <div id="purKitten">
+                <cat whichcat ="snow"></cat>
+            </div>
+            <div id="purKitten">
+                <cat whichcat ="pixi"></cat>
+            </div>
+            <div id="purKitten">
+                <cat whichcat ="bali"></cat>
+            </div>
 
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <style>
-        img {width: 500px;}
-        button{width: 80px; background-color: grey;color:white;padding: 8px;border-radius: 12px;border: solid black 4px;} </style>
-</head>
-
-<body>
-    <div id="bobcat">
-        <h2>{{thename}}</h2>
-        <h2>Adaptability Score: {{adapt}}</h2>
-        <button v-on:click="slideshow()">slideshow</button><br><br>
-   
-        <img :src="image.url"><br>
-    </div>
-
-
-</body>
+            <div class = "explanation">
+                <h3>
+                    How it Works
+                </h3>
+                <p>
+                    With the use of a Vue component, I can customize the breed of cat that each instance of the component shows a slideshow for. 
+                    It takes in a 'prop' which gives the component the name that is used to match the correct id in the Cat API. 
+                    The template contains the HTML that will be inserted when the component is used. 
+                    Each data is collected for the objects and also returns each of the variables when the component is created.
+                    The component also calls loadNextImage with the prop. 
+                    loadNextImage pre-loads the first 10 images for each breed to display them in the slideshow.
+                    The button created in the template is linked to the slideshow function, so each time it is clicked, the slideshow function is executed, and it displays the 10 pre-loaded images. 
+                    The bar charts are created by making several colored divs that are sized according to their values.
+                </p>
+            </div>
+        </div>
+    </body>
     <script src="catshow.js"></script>
-</html>
