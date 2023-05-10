@@ -10,55 +10,37 @@
         <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
 </head>
 <body>
-   
-      
-      <div class="alert-div">
-        <p>Color #FFFFF copied to clipboard!</p>
-      </div>
-        <section class = "section1">
-          <h1>Color Palette Generator</h1>
-          <div class = "colors">
-      
-            <div class = "color">
-              <div class="color-img"></div>
-              <div class="color-text">#EEEDF0</div>
-            </div>
-      
-            <div class = "color">
-              <div class="color-img"></div>
-              <div class="color-text">#EEEDF0</div>
-            </div>
-      
-            <div class = "color">
-              <div class="color-img"></div>
-              <div class="color-text">#EEEDF0</div>
-            </div>
-      
-            <div class = "color">
-              <div class="color-img"></div>
-              <div class="color-text">#EEEDF0</div>
-            </div>
-      
-            <div class = "color">
-              <div class="color-img"></div>
-              <div class="color-text">#EEEDF0</div>
-            </div>
+    <main id = "app">
+        <div class="alert-div" v-if="showSuccessAlert" >
+            <p>{{message}}</p>
           </div>
-      
-      
-          <!-- <palette 
-            v-for="colors in colorData"
-            :color="colors.hex.value"
-            :name="colors.name.value"
-            class="mx-auto"
-            /> -->
-      
-        </section>
-        <section class = "section2">
-          <button class = "btn" id = 'generate' onclick="fetchData()"> Randomize!</button>
-          <p>Or press 'SPACEBAR' to generate new palettes!</p>
-          <h4> Click to copy individual color. Press to 'C' to copy palettes.</h4>
-        </section>
+            <section class = "section1">
+              <h1>Color Palette Generator</h1>
+              <div class = "colors">
+          
+                <div class = "color" v-for="color in colors"  @click="handleCopy(color)">
+                  <div class="color-img" :style="{backgroundColor: color}"></div>
+                  <div class="color-text">{{ color }}</div>
+                  <!-- <p class="text-center fs-6 title"> {{name}} </p> -->
+                </div>
+                </div>
+
+            </section>
+
+
+
+            <section class = "section2">
+              <button class = "btn" id = 'generate' @click="generateHex"> Randomize!</button>
+              <p>Or press 'SPACEBAR' or 'ENTER' to generate new palettes!</p>
+              <h4> Click an individual color to copy it.</h4>
+              <br>
+              <br>
+              <br>
+              <br>
+              <h5>* Note that keypress are NOT supported on Safari</h5>
+            </section>
+
+        </main>
     
 </body>
 </html>
