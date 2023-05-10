@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+        <!-- Import Vue.js -->
+        <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+</head>
+<body>
+   
+      
+      <div class="alert-div">
+        <p>Color #FFFFF copied to clipboard!</p>
+      </div>
+        <section class = "section1">
+          <h1>Color Palette Generator</h1>
+          <div class = "colors">
+      
+            <div class = "color">
+              <div class="color-img"></div>
+              <div class="color-text">#EEEDF0</div>
+            </div>
+      
+            <div class = "color">
+              <div class="color-img"></div>
+              <div class="color-text">#EEEDF0</div>
+            </div>
+      
+            <div class = "color">
+              <div class="color-img"></div>
+              <div class="color-text">#EEEDF0</div>
+            </div>
+      
+            <div class = "color">
+              <div class="color-img"></div>
+              <div class="color-text">#EEEDF0</div>
+            </div>
+      
+            <div class = "color">
+              <div class="color-img"></div>
+              <div class="color-text">#EEEDF0</div>
+            </div>
+          </div>
+      
+      
+          <!-- <palette 
+            v-for="colors in colorData"
+            :color="colors.hex.value"
+            :name="colors.name.value"
+            class="mx-auto"
+            /> -->
+      
+        </section>
+        <section class = "section2">
+          <button class = "btn" id = 'generate' onclick="fetchData()"> Randomize!</button>
+          <p>Or press 'SPACEBAR' to generate new palettes!</p>
+          <h4> Click to copy individual color. Press to 'C' to copy palettes.</h4>
+        </section>
+    
+</body>
+</html>
+<script src = "palette.js"></script>
